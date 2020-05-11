@@ -1,3 +1,18 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello world</text>
-<button size="mini">按钮</button>
+<!-- scroll-view:实现局部滚动 -->
+
+<!-- 1.水平滚动:scroll-x -->
+<scroll-view class="container" scroll-x>
+  <view wx:for="{{10}}" class="item">哈哈哈</view>
+</scroll-view>
+
+<!-- 2.垂直滚动：scroll-y -->
+<scroll-view class="container2" scroll-y scroll-top="{{200}}">
+  <view wx:for="{{10}}" class="item2">哈哈哈</view>
+</scroll-view>
+
+<!-- 3.其他事件的补充 -->
+<!-- bindscroll:监听滚动 -->
+<scroll-view class="container2" scroll-y bindscroll="handleScroll">
+  <view wx:for="{{10}}" class="item2">哈哈哈</view>
+</scroll-view>

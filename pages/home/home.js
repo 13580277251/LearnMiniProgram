@@ -62,5 +62,9 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  handleScroll(event){
+    console.log('滚动监听',event);
+    
   }
 })
