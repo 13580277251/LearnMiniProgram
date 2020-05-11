@@ -1,3 +1,46 @@
 <!--pages/home/home.wxml-->
 <text class="title">Hello world</text>
 <button size="mini">按钮</button>
+
+<!-- image组件 -->
+<!-- 1.image的基本使用：image可以写成单标签，也可以写成双标签
+     2.image组件默认有自己的大小，行内块级元素  -->
+<image src="" ></image>
+ <text>哈哈</text>
+
+ <!-- 2.src:本地地址/远程地址 -->
+<image src="../../assets/images/home/recommend_bg.jpg"></image>
+
+<!-- 补充：使用相册中的图片或者自拍 -->
+<button bindtap="handleChooseAlbum">选中图片</button>
+<image src="{{Path}}"></image>
+
+<!-- 3.bindload:监听图片加载完成:在即将进入一定范围（上下三屏）时才开始加载 -->
+<image wx:for="{{2}}" src="../../assets/images/home/recommend_bg.jpg" bindload="handleimageLoad" lazy-load></image>
+
+<!-- 4.show-menu-by-longpress:长按图片出现识别小程序码,真机调试有效，但是没得识别 -->
+<image show-menu-by-longpress src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"/>
+
+<!-- 5.mode：图片裁剪、缩放的模式、查看文档  -->
+
+<!-- input组件 -->
+<!-- 1.input胡基本使用 -->
+<input/>
+
+<!-- 2.value:input中的默认值 -->
+
+<!-- 3.type：决定键盘类型（文本输入键盘/数字） -->
+<input type="number"/>
+
+<!-- 4.password:暗文 -->
+<input password/>
+
+<!-- 5.placeholder:占位文字，默认为true -->
+<input placeholder/>
+
+<!-- 6.input的绑定事件 -->
+<input bindinput="handleInput" 
+       bindfocus="handleFocus" 
+       bindblur="handleBlur"/>
+
+<!-- scroll-view:实现局部滚动 -->

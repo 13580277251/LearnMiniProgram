@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    Path:null
   },
 
   /**
@@ -62,5 +62,29 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  handleChooseAlbum(){
+    // 系统API，让用户在相册中选择图片(或者拍照)
+    wx.chooseImage({
+      complete: (res) => {
+        // 1.取出路径
+        const path = res.tempFilePaths[0]
+        this.setData({
+          Path:path
+        })
+      },
+    })
+  },
+  handleimageLoad(){
+    console.log('图片加载完成');
+  },
+  handleInput(event){
+    console.log('输入的时候出发',event);
+  },
+  handleFocus(event){
+    console.log('聚焦的时候触发',event);
+  },
+  handleBlur(event){
+    console.log('失去焦点的时候触发',event);
   }
 })

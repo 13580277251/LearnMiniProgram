@@ -3,3 +3,8 @@
     color: red;
     font-size: 30px;
   }
+  input{
+    border: 1px solid red;
+    margin: 10px auto;
+    width: 300px;
+  }
