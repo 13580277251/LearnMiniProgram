@@ -3,3 +3,29 @@
     color: red;
     font-size: 30px;
   }
+  .pressed{
+    background-color: red;
+    color:white;
+  }
+  .box{
+    background-color: red;
+  }
+  .box1{
+    height: 50px;
+    width: 50px;
+    background-color: royalblue;
+  }
+  .hover-view{
+    background-color: red;
+    font-size: 30px;
+  }
+  .box2{
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+    margin-top: 20px;
+  }
+  .hover-view2{
+    background-color: red;
+    /* font-size: 30px; */
+  }
