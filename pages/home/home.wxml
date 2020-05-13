@@ -1,3 +1,37 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello world</text>
-<button size="mini">按钮</button>
+
+<!-- 1.wxs错误写法 -->
+<!-- <view>{{25.66666666.toFixed}}</view> -->
+
+<!-- 2.wxs的定义方式 -->
+<!-- 2.1.直接在wxml中定义 -->
+<!-- WXS（WeiXin Script）是小程序的一套脚本语言，结合 WXML，可以构建出页面的结构,是完全私有的 -->
+<!-- <wxs module="info">
+  var message = "Hello World";
+  var name = "zjl";
+
+  var sum = function(num1,num2){
+    return num1 + num2
+  }
+
+  module.exports = {
+    message:message,
+    name:name,
+    sum:sum
+  }
+</wxs> -->
+
+<!-- 2.2定义在单独的wxs文件中，再使用<wxs>标签进行导入 -->
+<!-- 不能使用绝对路径，必须使用相对路径 -->
+<wxs src="../../wxs/info.wxs" module="info"/>
+
+<view>{{info.message}}</view>
+<view>{{info.name}}</view>
+<view>{{info.sum(20,30)}}</view>
+
+<!-- 3.wxs的应用 -->
+<wxs src="../../wxs/format.wxs" module="info2"/>
+
+<view>{{info2.priceFormat(price)}}</view>
+<view>{{info2.dateFormat(time,"yyyy-MM-dd hh:mm:ss")}}</view>
+
