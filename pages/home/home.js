@@ -5,7 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isShow:true,
+    score:45,
+    movies:['盗梦空间','大话西游','星际穿越'],
+    nums:[
+      [1,2,3,4],
+      [11,22,33,44],
+      [111,222,333,444]
+    ]
+  },
+  handleIncreament(){
+    this.setData({
+      score:this.data.score + 8
+    })
+  },
+  handleswitch(){
+    this.setData({
+      isShow:!this.data.isShow
+    })
   },
 
   /**

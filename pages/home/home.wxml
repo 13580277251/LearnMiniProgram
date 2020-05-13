@@ -1,3 +1,67 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello world</text>
-<button size="mini">按钮</button>
+
+<include src="../../wxml/haeder.wxml" />
+
+<!-------------条件判断-------------->
+<!-- 1.wx:if的使用 -->
+<view wx:if="{{isShow}}">哈哈哈</view>
+<button size="mini" bindtap="handleswitch">切换</button>
+
+<!-- 2.wx:elif/wx:else -->
+<view wx:if="{{score >= 90}}">优秀</view>
+<view wx:elif="{{score >= 80}}">良好</view>
+<view wx:elif="{{score >= 60}}">及格</view>
+<view wx:else>不及格</view>
+<button size="mini" bindtap="handleIncreament">分数递增:{{score}}</button>
+
+<!-- hidden属性,控制标签的显示和隐藏，隐藏之后，组件是依然存在的（display：none） -->
+<view hidden="{{false}}">我是hidden属性控制的内容</view>
+<!-- wx:if隐藏的时候组件是不存在的，该组件是压根不会存在的 -->
+<view wx:if="{{true}}">我是wx:if属性控制的内容</view>
+
+<!-- 循环遍历 -->
+<view>-----------1.列表渲染-------------</view>
+<!-- 1.wx:for -->
+<!-- 1.1.遍历数组/字符串/数字 -->
+<!-- <view wx:for="{{['abc','cba','nba']}}">{{item}}-{{index}}</view>
+<view wx:for="codewhy">{{item}}-{{index}}</view>
+<view wx:for="{{10}}">{{item}}-{{index}}</view> -->
+
+<!-- block标签 -->
+<!-- block并不是一个组件，它仅仅是一个包装元素，不会在页面中渲染，只接受控制属性
+     1.将需要进行遍历或者判断的内容进行包裹
+     2.将遍历和判断的属性放在block标签中，不影响普通属性的阅读，提高代码的可读性  -->
+<view>--------2.block-------------</view>
+<!-- <block wx:if="{{isShow}}">
+  <button>按钮</button>
+  <view>呵呵呵呵</view>
+  <text>我是内容</text>
+</block>
+
+<block wx:for="{{3}}">
+  <button>按钮</button>
+  <view>呵呵呵呵</view>
+  <text>我是内容</text>
+</block> -->
+
+<view>----------3.item/index起别名----------</view>
+<!-- <view wx:for="{{movies}}" wx:for-item="movie" wx:for-index="i" wx:key="index">{{movie}}-{{i}}</view>
+<block wx:for="{{nums}}" wx:for-item="childitem" wx:key="index">
+  <view wx:for="{{childitem}}" wx:key="index">{{item}}</view>
+</block> -->
+
+
+<!-- 模板在使用前是不会进行任何的渲染的 -->
+<view>---------template-------------</view>
+<!-- 1.template导入 -->
+<!-- 不可以进行递归导入，比如把另外一个template文件导入到一个tamplate文件中，再导出使用第一个template中的模板，是不可以的 -->
+<import src="../../wxml/template.wxml"/>
+
+<!-- is:对应的是tamplate中的name -->
+<template is="contentItem" data="{{btnText:'按钮',content:'哈哈哈'}}"/>
+<template is="contentItem" data="{{btnText:'警告',content:'嗡嗡嗡'}}"/>
+
+<!-- 2.include导入 -->
+<!-- 将文件中除了<template><wxs>之类的内容拷贝入include的地方 -->
+<!-- 注意：可以递归导入 -->
+<include src="../../wxml/footer.wxml"/>
