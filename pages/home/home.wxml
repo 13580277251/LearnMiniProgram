@@ -1,3 +1,3 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello world</text>
-<button size="mini">按钮</button>
+<w-tab title="{{title}}" bind:itemClick="itemClick"/>
+<view>{{tabindex}}-{{tabtitle}}</view>

@@ -5,7 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    title:['潮流' ,'流行','新款'],
+    tabindex:0,
+    tabtitle:'潮流'
+  },
+  itemClick(event){
+    console.log(event);
+    
+    this.setData({
+      tabindex:event.detail.index,
+      tabtitle:event.detail.title
+    })
   },
 
   /**

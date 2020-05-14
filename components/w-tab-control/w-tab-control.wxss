@@ -1,0 +1,15 @@
+/* components/w-tab-control/w-tab-control.wxss */
+.outer{
+  background-color: blanchedalmond;
+  height: 60rpx;
+  width: 100%;
+  display: flex;
+  line-height: 60rpx;
+}
+.inner{
+  flex: 1;
+  text-align: center;
+}
+.active .text1{
+  border-bottom: 1px solid #22ffee;
+}
