@@ -1,0 +1,6 @@
+/* components/cpn1/cpn1.wxss */
+.box{
+  color: blue;
+  font-size: 25px;
+  background-color: brown;
+}

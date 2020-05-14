@@ -1,3 +1,18 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello world</text>
-<button size="mini">按钮</button>
+
+<!-- 1.使用自定义组件的基本使用 -->
+<!-- <my-cpn></my-cpn> -->
+
+<!-- 2.自定义组建的样式细节 -->
+<!-- 组件内部准许使用id选择器，标签选择器，属性选择器 -->
+<view class="title">使组件中的样式互相影响</view>
+<my-style/>
+
+<!-- 3.给自定义组件传递数据/样式 -->
+<my-prop title="哈哈哈" titleclass="red"></my-prop>
+<my-prop title="呵呵呵" titleclass="green"></my-prop>
+<my-prop titleclass="blue"></my-prop>
+
+<!-- 4.组件内部发出事件 -->
+<view>当前计数:{{counter}}</view>
+<my-event bind:increment="handleincrement"/>

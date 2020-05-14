@@ -3,7 +3,13 @@
     "pages/home/home",
     "pages/about/about",
     "pages/category/category",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "components/cpn1/cpn1",
+    "components/my-style/my-style",
+    "components/my-event/my-event"
   ],
+  "usingComponents": {
+    "my-cpn": "./components/my-cpn/my-cpn"
+  },
   "sitemapLocation": "sitemap.json"
 }
