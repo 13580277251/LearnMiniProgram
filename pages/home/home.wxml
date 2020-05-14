@@ -1,3 +1,53 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello world</text>
-<button size="mini">按钮</button>
+<!-- 1.事件处理得回顾 -->
+<!-- handlebtn和handlebtn-->
+<button bindtap="handlebtn" size="mini">按钮</button>
+<button bind:tap="handlebtn" size="mini">按钮</button>
+<button catchtap="handlebtn" size="mini">按钮</button>
+
+<!-- 2.常见的一些事件 -->
+<!-- bindtouchstart:触摸事件，
+     bindtouchmove：触摸后移动事件，
+     bindtouchend：触摸后松开事件，
+     bindlongpress：触摸300ms以上时间事件  -->
+<view class="box"
+      bindtouchstart="handleTouchstart"
+      bindtouchmove="bindTouchmove"
+      bindtouchend="bindTouchend"
+      bindtap="bindTap"
+      bindlongpress="bindLongpress"></view>
+
+<!-- 3.事件对象的分析 -->
+<!-- event中的touches（当前屏幕所有触摸点）和changedTouches（触发事件时改变的触摸点的集合）的区别
+        1.在touchend中不同：在触摸结束的时候touches长度为0，但是changedTouches为1，因为changedTouches为记录产生变化的
+        2.在多手指触摸时不同 -->
+<button size="mini" bindtap="handleEventClick"
+                    bindtouchend="bindTouchend">事件对象</button>
+
+<!-- 3.事件对象的分析 -->
+<!-- 产生冒泡事件的时候currentTarget和Target的值会不同 -->
+<!-- Target记录产生事件的view，currentTarget记录触发事件的view -->
+<view class="outer" id="outer" bindtap="handleouter">
+  外层
+  <view class="inner" id="inner" bindtap="handleInner">内层</view>
+</view>
+
+<!-- 4.事件的传递参数 -->
+<!-- data-index和data-item -->
+<view class="container">
+  <block wx:for="{{titles}}" wx:key="index" wx:for-item="items">
+    <view class="item" 
+    bindtap="handleitem"
+    data-index="{{index}}"
+    data-item="{{items}}">{{items}}</view>
+  </block>
+</view>
+
+<!-- 5.事件冒泡和事件捕获 -->
+<!-- bind:一层层传递 -->
+<!-- catch：阻止事件的进一步传递 -->
+<view class="view1" capture-catch:tap="handleCaptrueView1" bindtap="handleBindView1">
+  <view class="view2" capture-bind:tap="handleCaptrueView2" bindtap="handleBindView2">
+    <view class="view3" capture-bind:tap="handleCaptrueView3" bindtap="handleBindView3"></view>
+  </view>
+</view>
