@@ -1,3 +1,5 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello world</text>
-<button size="mini">按钮</button>
+
+<!-- 1.直接选中组件修改数据/调用方法 -->
+<button size="mini" bind:tap="handleIncrementCpn">修改组件内部的数据</button>
+<my-sel id="sle_id"/>

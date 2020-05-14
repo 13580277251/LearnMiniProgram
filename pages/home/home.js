@@ -7,6 +7,19 @@ Page({
   data: {
 
   },
+  handleIncrementCpn(){
+    // 修改组件中的数据
+    // 获取组建对象
+    const my_sel = this.selectComponent('#sle_id')
+    console.log(my_sel);
+    // 修改组件数据（不合理），最好的方法是在组件中暴露一个修改数据的方法
+    // my_sel.setData({
+    //   counter:my_sel.data.counter + 20
+    // })
+    
+    // 通过组件中的方法进行修改
+    my_sel.increamentCounter(10)
+  },
 
   /**
    * 生命周期函数--监听页面加载
