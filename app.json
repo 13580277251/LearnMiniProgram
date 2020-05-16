@@ -3,7 +3,20 @@
     "pages/home/home",
     "pages/about/about",
     "pages/category/category",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/detail/detail"
   ],
+  "tabBar":{
+    "list":[
+      {
+        "pagePath":"pages/home/home",
+        "text":"首页"
+      },
+      {
+        "pagePath":"pages/about/about",
+        "text":"关于"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json"
 }

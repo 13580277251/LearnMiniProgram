@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    titles:'哈哈哈'
+  },
+  handlepushDetail(){
+    wx.navigateTo({
+      url: '/pages/detail/detail?title=你好啊'
+    })
   },
 
   /**

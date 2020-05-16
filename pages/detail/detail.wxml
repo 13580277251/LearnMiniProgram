@@ -1,0 +1,7 @@
+<!--pages/detail/detail.wxml-->
+
+<navigator url="/pages/profile/profile">跳到档案页</navigator>
+<!-- 自定义返回 -->
+<navigator open-type="navigateBack">返回</navigator>
+
+<button size="mini" bindtap="handleBack">js返回</button>
