@@ -1,66 +1,53 @@
 // pages/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  hadleshowToast(){
+    wx.showToast({
+      title: '加载中',
+      duration:1000,
+      icon:'loading',
+      // 生成一个蒙版
+      mask:true
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  hadleshowModal(){
+    wx.showModal({
+      title:'我是标题',
+      content:'我是内容',
+      // 取消'取消按钮'
+      // showCancel:false,
+      // 对取消或者确定按钮文字的修改
+      cancelText:'退出',
+      confirmText:'进入',
+      cancelColor:'red',
+      success(res){
+        if(res.cancel){
+          console.log('用户点击了取消按钮');
+        }
+        if(res.confirm){
+          console.log('用户点击了确定按钮');
+        }
+      }
+    })
   },
+  hadleshowLoading(){
+    wx.showLoading({
+      title: '加载ing',
+      mask:true
+    })
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+    setTimeout(() => {
+      // 必须手动hideLOading才会让loading消失
+      // 或者等网络请求后回调
+      wx.hideLoading()
+    },1000)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  hadleshowactionSheet(){
+    wx.showActionSheet({
+      itemList: ['相册','拍照'],
+      success(res){
+        console.log(res);
+        
+      }
+    })
   }
 })
